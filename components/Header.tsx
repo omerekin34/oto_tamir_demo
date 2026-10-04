@@ -1,7 +1,8 @@
 "use client";
 
-import { Menu, Phone, Wrench, X } from "lucide-react";
+import { Menu, Phone, X } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import Image from "next/image";
 import { useState, type MouseEvent } from "react";
 import { navLinks, site } from "@/lib/site";
 
@@ -33,9 +34,14 @@ export function Header() {
           className="flex min-w-0 items-center gap-2.5"
           onClick={(event) => onNavClick(event, "#hero")}
         >
-          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-yellow-400 text-zinc-950">
-            <Wrench className="h-5 w-5" aria-hidden="true" />
-          </span>
+          <Image
+            src="/logo.png"
+            alt=""
+            width={40}
+            height={40}
+            priority
+            className="h-10 w-10 shrink-0 object-contain"
+          />
           <span className="font-display text-2xl font-bold tracking-wide text-white">
             Oto<span className="text-yellow-400">Usta</span>
           </span>
